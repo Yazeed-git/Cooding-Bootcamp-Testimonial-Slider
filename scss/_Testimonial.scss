@@ -1,0 +1,245 @@
+// resets
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+}
+
+// fonts
+body{
+    font-size: 32px;
+}
+.quotes{
+    font-size: 1rem;
+    line-height: 1.6;
+    color: $dark-blue;
+}
+.user-info{
+    font-size: 0.85rem;
+    font-weight: $bold;
+    color: $dark-blue;
+}
+span{
+    font-weight: $light;
+    color: $grayish-blue;
+}   
+
+// image & background
+body{
+    background-image: url('../images/pattern-curve.svg');
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.container{
+    width: 90%;
+    max-width: 450px;
+    height: 80vh;
+    margin: 0 auto;
+}
+
+.slide{
+    display: flex;
+    flex-direction: column;
+}
+
+.bg-img{
+    background-image: url('../images/pattern-bg.svg');
+    background-size: 20.5rem;
+    background-repeat: no-repeat;
+    background-position: center 34px;
+    padding: 2em;
+}
+
+.img{
+    margin: 0 auto;
+    width: 16rem;
+    height: 16rem;
+    position: relative;
+    border-radius: 0.15em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 2px 8px 12px rgba(0,0,0,0.15);
+}
+.btn-group{
+    width: 70px;
+    z-index: 4;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 52%;
+    border-radius: 50px;
+    transform: translateX(-50%);
+    box-shadow: 2px 8px 12px rgba(0,0,0,0.15);
+
+    .btn{
+        border: none;
+        outline: none;
+        width: 35px;
+        height: 35px;
+        background: #fff;
+        cursor: pointer;
+    }
+    img{
+        width: 6.5px;
+    }
+    .prev-btn{
+        border-radius: 50px 0px 0px 50px;
+    }
+    .next-btn{
+        border-radius: 0 50px 50px 0;
+    }
+}
+
+.img-tanya{
+    background-image:url('../images/image-tanya.jpg');
+}
+.img-john{
+    background-image:url('../images/image-john.jpg');
+}
+
+
+// content
+.content{
+    padding: 1em 1em;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 350px;
+    position: relative;
+    text-align: center;
+
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 65px;
+        height: 65px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url('../images/pattern-quotes.svg');
+        transform: translateX(-50%);
+    }
+}
+
+.user-info{
+    display: inline-block;
+    margin: 1.5em 0;
+}
+
+span{
+    display: block;
+}
+
+@media (min-width: 1080px){
+    .container{
+        max-width: 1050px;
+    }
+    .slide{
+        margin-top: 1em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .bg-img{
+            background-position-y: 17px;
+            background-size: 32rem;
+            order: 1;
+            flex-shrink: 0;
+            width: 50%;
+            padding-left: 0;
+            padding-right: 0;
+            position: relative;
+            right: 50px;
+        }
+
+        .img{
+            width: 25rem;
+            height: 25rem;
+        }
+
+        .content{
+            order: 0;
+            padding: 0;
+            margin-top: 3em;
+            text-align: left;
+            left: 95px;
+            width: 100%;
+            max-width: 450px;
+
+            &::before{
+                top: -35px;
+                left: 24.5%;
+                width: 85px;
+                height: 85px;
+            }
+        }
+
+      
+        .quotes{
+            font-size: 1.4rem;
+            position: relative;
+            flex-shrink: 0;
+            // width: 100%;
+            
+        }
+
+        .user-info{
+            font-size: 1rem;
+        }
+        span{
+            display: inline-block;
+            margin-left: .5em;
+        }
+    }
+    .btn-group{
+        width: 80px;
+        top: 29.8rem;
+        left: 66%;
+        transform: none;
+
+        .btn{
+            width: 50px;
+            height: 40px;
+            transition: background .25s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:hover{
+                background: #dedede;
+            }
+            &:active{
+                background: #d3d3d3;
+            }
+            &:active img{
+                transform: scale(1.1);
+            }
+        }
+        img{
+            width: 8px;
+        }
+    }
+
+    
+}
+
+.slide2{
+    display: none;
+}
+
+@media (min-width: 1200px){
+    .btn-group{
+        left: 64.5%;
+    }
+}
+
+@media (min-width: 1400px){
+    .btn-group{
+        left: 63%;
+    }
+}
